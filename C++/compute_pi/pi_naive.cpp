@@ -20,8 +20,9 @@ const auto parseCommandLineArgs(const int argc,  char** argv){
 }
 
 
-inline bool isInCircle(const Floating& x, const Floating& y){
-	return (x*x +  y*y <= 1.0);
+
+inline bool isInCircle(const Floating& x, const Floating& y, const Floating radius=1.0){
+	return (x*x +  y*y <= radius);
 }
 
 
