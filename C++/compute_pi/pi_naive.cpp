@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <iomanip>
 
-using Floating= double;
+using Floating= long double;
 using Integral= long;
 constexpr Integral DEFAULT_NUM_TRY=1000;
 
@@ -37,6 +37,7 @@ public:
 	void operator()(){
 		thread_function();
 	}
+
 	 void thread_function(){
 	 	//std::cout<<"Thread "<<id<<": Started"<<std::endl;
 		const Floating range_from  = 0.0;
@@ -72,7 +73,7 @@ int main(int argc, char** argv){
 		threads.push_back(std::thread(std::ref(workers.back())));
 	}
 
-std::cout<<"Main Waiting for workers to finish"<<std::endl;
+//std::cout<<"Main Waiting for workers to finish"<<std::endl;
 	for(auto& t : threads)
 		t.join();
 
